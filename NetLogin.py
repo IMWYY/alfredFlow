@@ -7,8 +7,8 @@ import urllib2
 
 def net_login():
     url = 'http://p.nju.edu.cn/portal_io/login'
-    username = '151250150'  # 可将密码等保存至文件
-    password = 'wycg55967568w'
+    username = '151250xxx'  # 可将密码等保存至文件
+    password = 'xxxxxx'
     data = {'username': username, 'password': password}
     postdata = urllib.urlencode(data).encode('utf-8')
     try:

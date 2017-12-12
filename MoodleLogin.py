@@ -6,8 +6,8 @@ import urllib2
 
 def moodle_login():
     url = 'http://218.94.159.99/login/index.php'
-    username = '151250150@smail.nju.edu.cn'  # 可将密码等保存至文件
-    password = 'wycg55967568W'
+    username = 'xxxxxx'  # 可将密码等保存至文件
+    password = 'xxxxxxx'
     data = {'username': username, 'password': password}
     postdata = urllib.urlencode(data).encode('utf-8')
     try:
