@@ -1,22 +1,22 @@
 # -*- coding:utf-8 -*-
-
+import getopt
 import json
 import urllib
 import urllib2
 
+import sys
 
-def net_login():
+
+def net_login(username, password):
     url = 'http://p.nju.edu.cn/portal_io/login'
-    username = '151250xxx'  # 可将密码等保存至文件
-    password = 'xxxxxx'
     data = {'username': username, 'password': password}
-    postdata = urllib.urlencode(data).encode('utf-8')
+    post_data = urllib.urlencode(data).encode('utf-8')
     try:
-        request = urllib2.Request(url, postdata)
+        request = urllib2.Request(url, post_data)
         response = urllib2.urlopen(request)
         # 从结果内容中查找是否有特定字符串
         res = json.loads(response.read().decode('utf-8'))
-        # print res["reply_code"]
+        print res["reply_code"]
     except Exception as e:
         print(e)
 
@@ -33,5 +33,29 @@ def net_logout():
         print(e)
 
 
+def main(argv):
+    ttype = ''
+    user = ''
+    pwd = ''
+    try:
+        opts, args = getopt.getopt(argv, "t:u:p:")
+    except getopt.GetoptError:
+        print 'net_login.py -t <type> -u <username> -p <password>'
+        sys.exit(2)
+
+    for opt, arg in opts:
+        if opt == '-t':
+            ttype = arg
+        elif opt == '-u':
+            user = arg
+        elif opt == '-p':
+            pwd = arg
+
+    if ttype == '0':
+        net_login(username=user, password=pwd)
+    else:
+        net_logout()
+
+
 if __name__ == '__main__':
-    net_login()
+    main(sys.argv[1:])

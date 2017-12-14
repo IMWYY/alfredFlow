@@ -3,9 +3,8 @@
 
 之前也一直使用被称为mac神器到alfred。直到今天才发现我用的是低版本，功能非常基础。而高版本所支持的workflow才是真的称为神器。。workflow就是让alfred直接执行脚本，包括shell、python、php等。
 
-写了两个例子
 
-#### 登录校园网（使用python脚本）
+#### workflow登录校园网
 
 在之前用旧版本的alfred登录校园网所用的方法是在feature添加web url，输入p打开p.nju.edu.cn。然后点击输入浏览器记住的密码登陆。相比打开浏览器页面已经快捷很多。但是如果使用workflow可以直接，输入指定内容，回车就可以登陆。具体定义该workflow的步骤如下：
 
@@ -49,29 +48,23 @@ def login():
 if __name__ == '__main__':
     login()
 ```
-快捷键打开alfred输入框，输入你的关键字，回车。就连上了校园网，简直方便到爆。
-
-#### 部署hexo博客（使用shell脚本）
-
-一般部署hexo博客要输入三条命令`hexo clean` `hexo g` `hexo d`。每次都要打开终端输入三个命令真的很麻烦，进阶方法是将命令写成shell脚本，打开终端执行./xxx.sh。当然也可以利用alfred，连终端都不用自己打开。
-
-1 2 3步骤和上个例子一样，不过第四步选择terminal command
-
-![](images/alfred4.png)
-
-然后输入脚本
-
-```
-cd 你的博客本地目录 && hexo clean && hexo g && hexo d
-```
-	
-写完博客，快捷键打开alfred输入框，输入你定义的关键字，回车。部署完成。
-同理也可以将博客创建的几条命令放在shell脚本用workflow打开。
+快捷键打开alfred输入框，输入你的关键字，回车。就连上了校园网，很方便。
 
 
-### 问题
-照理说命令应该选择script，但是不奏效，debug（workflow页面有个小虫子，就是debug）发现找不到hexo命令（我明明安装的是全局hexo命令）。所以选择terminal command。找到原因了再来改
+#### 更简单的方式：下载.alfredworkflow文件
 
-最后alfred是真神器。
+1. 下载NJUnet.alfredworkflow文件
+2. 双击下载的文件
+3. 双击这两个脚本 按提示输入自己的账号密码
+
+![屏幕快照 2017-12-14 下午5.12.12.png](http://upload-images.jianshu.io/upload_images/7054861-6194aff17a77a040.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+**_*此时快捷键‘opt+p’可以登录校园网，登录成功后有提示音和notification；‘opt+o’可以退出登录校园网，退出成功后有提示音和notification；*_**
+
+
+
+---
+
+#### 最后安利，alfred是真神器。
 	
 
