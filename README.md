@@ -1,7 +1,7 @@
 
 ## workflow登录校园网
 
-在之前用旧版本的alfred登录校园网所用的方法是在feature添加web url，输入p打开p.nju.edu.cn。然后点击输入浏览器记住的密码登陆。相比打开浏览器页面已经快捷很多。但是如果使用workflow**直接快捷键‘opt+p’可以登录校园网，登录成功后有提示音和notification；‘opt+o’可以退出登录校园网，退出成功后有提示音和notification；** 步骤如下：
+在之前用旧版本的alfred登录校园网所用的方法是在feature添加web url，输入p打开p.nju.edu.cn。然后点击输入浏览器记住的密码登陆。但是如果使用workflow**直接快捷键‘opt+p’可以登录校园网，登录成功后有提示音和notification；‘opt+o’可以退出登录校园网，退出成功后有提示音和notification；** 步骤如下：
 
 1. preference中点击workflow,按照如图选择keyword to script
 
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
 ## workflow让github变成最快捷的图床
 
-写markdown的都知道，图片需要url，如果需要本地一张图片显示要先上传，获取url，这就显得麻烦。能不能有个软件，选中图片，按个快捷键，就可以上传图片拿到图片的url呢？ **workflow可以做到。** （本来打算学一学写个mac应用的，没想到workflow一个shell脚本就可以了）
+写markdown的都知道，图片需要url，如果需要本地一张图片显示要先上传，获取url，这就显得麻烦。能不能有个软件，选中图片，按个快捷键，就可以上传图片拿到图片的url呢？ **workflow可以做到。** 
 	
 步骤如下：
 
