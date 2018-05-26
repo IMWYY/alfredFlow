@@ -5,15 +5,15 @@
 
 1. preference中点击workflow,按照如图选择keyword to script
 
-	![](images/alfred1.png)
-	
+  <img src="images/alfred1.png" width="500" align=left/>
+
 2. 输入关键字和描述，保存
 
-	![](images/alfred2.png)
+  <img src="images/alfred2.png" width="500" align=left/>
 
 3. 右键创建script
 
-	![](images/alfred3.png)
+  <img src="images/alfred3.png" width="500" align=left/>
 
 4. 输入执行的脚本并保存
 
@@ -49,10 +49,12 @@ if __name__ == '__main__':
 #### 更简单的方式：下载.alfredworkflow文件
 
 1. 下载NJUnet.alfredworkflow文件
+
 2. 双击下载的文件
+
 3. 双击这两个脚本 按提示输入自己的账号密码
 
-![屏幕快照 2017-12-14 下午5.12.12.png](http://upload-images.jianshu.io/upload_images/7054861-6194aff17a77a040.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+   <img src="http://upload-images.jianshu.io/upload_images/7054861-6194aff17a77a040.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="200" align=left/>
 
 ---
 
@@ -64,26 +66,26 @@ if __name__ == '__main__':
 
 1. 新建如下工作流。可根据自己需要更改。需要注意的是hotkey里`argument`选择`selection in macOS`,快捷键可以自己定义
 
-	![](http://raw.githubusercontent.com/IMWYY/AboutMyself/master/picBed/Screenshot1516420691.png)
+  <img src="http://raw.githubusercontent.com/IMWYY/AboutMyself/master/picBed/Screenshot1527301281.png" width="500" align=left/>
 
 2. 编写shell脚本
 
-	```shell
-	#!/bin/bash
-	t=$(date +%s)
-	cp '{query}' /Users/Mark.W/Documents/AboutMyself/picBed/Screenshot${t}.png
-	cd /Users/Mark.W/Documents/AboutMyself/ 
-	git add . > /dev/null
-	git commit -m add_upload_picture_${t} > /dev/null
-	git push origin master > /dev/null
-	echo http://raw.githubusercontent.com/IMWYY/AboutMyself/master/picBed/Screenshot${t}.png
-	```
+  ```shell
+  #!/bin/bash
+  t=$(date +%s)
+  cp '{query}' /Users/Mark.W/Documents/AboutMyself/picBed/Screenshot${t}.png
+  cd /Users/Mark.W/Documents/AboutMyself/ 
+  git add . > /dev/null
+  git commit -m add_upload_picture_${t} > /dev/null
+  git push origin master > /dev/null
+  echo http://raw.githubusercontent.com/IMWYY/AboutMyself/master/picBed/Screenshot${t}.png
+  ```
 
-	这里{query}是选中文件的路径，先将其拷贝至git本地仓库，然后再用git命令提交即可。这里有几个注意点：
-	1. {query}要加上引号，以防遇到文件名里有空格，cp命令会将其拆分当成命令参数。
-	2. git命令都有命令回显，而我需要到clipboard的内容只需要是图片url，为了防止干扰，命令后加上`> /dev/null`回显信息定位到“黑洞”。
-	3. git上图片链接地址需要加上`raw`。我这里用的仓库是`AboutMyself`。
-	4. 使用git命令需要配置好git本地的一些参数，ssh key，账号密码之类
+  这里{query}是选中文件的路径，先将其拷贝至git本地仓库，然后再用git命令提交即可。这里有几个注意点：
+  1. {query}要加上引号，以防遇到文件名里有空格，cp命令会将其拆分当成命令参数。
+  2. git命令都有命令回显，而我需要到clipboard的内容只需要是图片url，为了防止干扰，命令后加上`> /dev/null`回显信息定位到“黑洞”。
+  3. git上图片链接地址需要加上`raw`。我这里用的仓库是`AboutMyself`。
+  4. 使用git命令需要配置好git本地的一些参数，ssh key，账号密码之类
 
 #### 更简单的方式：下载.alfredworkflow文件
 
